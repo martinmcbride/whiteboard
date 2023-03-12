@@ -1,10 +1,11 @@
+# Author:  Martin McBride
+# Created: 2023-03-12
+# Copyright (C) 2023, Martin McBride
+# License: MIT
+
 import wx
 from foldertree import FolderTree
-
-
-class BoardPanel(wx.Panel):
-    def __init__(self, parent):
-        wx.Panel.__init__(self, parent=parent)
+from board import Board
 
 
 class TreePanel(wx.Panel):
@@ -24,7 +25,7 @@ class MainFrame(wx.Frame):
     def __init__(self):
         wx.Frame.__init__(self, parent=None, title='TreeCtrl Demo')
         splitter = wx.SplitterWindow(self)
-        board_panel = BoardPanel(splitter)
+        board_panel = Board(splitter)
         tree_panel = TreePanel(splitter)
 
         # split the window
